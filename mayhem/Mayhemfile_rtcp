@@ -1,0 +1,11 @@
+project: savantenvs/mediasoup
+target: rtcp
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/rtcp/testsuite
+cmds:
+  - cmd: /mayhem/mediasoup-worker-fuzzer
+    libfuzzer: true
+    timeout: 10
+    env:
+      MS_FUZZ_RTCP: '1'

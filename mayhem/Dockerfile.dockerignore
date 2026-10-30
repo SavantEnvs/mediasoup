@@ -1,0 +1,11 @@
+# Bake the FULL repo (incl. .git) into the commit image; drop only local build output and noise.
+**/out
+**/node_modules
+/target
+/node/lib
+/worker/subprojects/*
+!/worker/subprojects/*.wrap
+.DS_Store
+*.swp
+*~
+!/worker/subprojects/.clang-tidy

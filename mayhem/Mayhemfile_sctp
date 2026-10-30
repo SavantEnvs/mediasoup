@@ -1,0 +1,8 @@
+project: savantenvs/mediasoup
+target: sctp
+cmds:
+  - cmd: /mayhem/mediasoup-worker-fuzzer
+    libfuzzer: true
+    timeout: 10
+    env:
+      MS_FUZZ_SCTP: '1'
