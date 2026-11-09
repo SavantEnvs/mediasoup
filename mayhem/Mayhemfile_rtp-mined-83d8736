@@ -1,0 +1,11 @@
+project: savantenvs/mediasoup
+target: rtp-mined-83d8736
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/rtp-mined-83d8736/testsuite
+cmds:
+  - cmd: /mayhem/mediasoup-worker-fuzzer
+    libfuzzer: true
+    timeout: 10
+    env:
+      MS_FUZZ_RTP: '1'
